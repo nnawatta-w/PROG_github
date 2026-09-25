@@ -1,0 +1,60 @@
+name: PROG CI/CD
+
+on:
+ push:
+
+jobs:
+ PROG-RUN-PYTHON:
+  runs-on: ubuntu-latest
+
+  steps:
+   - name: Download repository
+    uses: actions/checkout@v6
+
+   - name: Set up Python
+    uses: actions/setup-python@v5
+    with:
+     python-version: "3.12"
+
+   - name: Run program
+    run: python3 main.py
+PROG - LAB 13
+Write GitHub Action
+
+You need to create file in site your current directory named .github
+
+Craete directory named workflow inside .github
+
+Craete File named run-cicd-prog.yml
+
+name: PROG CI/CD
+
+on:
+
+push:
+
+jobs:
+
+PROG-RUN-PYTHON:
+
+runs-on: ubuntu-latest
+
+steps:
+
+- name: Download repository
+
+uses: actions/checkout@v6
+
+- name: Set up Python
+
+uses: actions/setup-python@v5
+
+with:
+
+python-version: "3.12"
+
+- name: Run program
+
+run: python3 69051227.py
+
+
