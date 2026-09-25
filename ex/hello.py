@@ -1,0 +1,8 @@
+x = input("Enter Your Name: ")
+y = input("Enter Your Age: ")
+z = input("Enter Your Student ID: ")
+a = input("Enter Your Favorite Song: ")
+print("Hello", x + "!")
+print("You are", y, "years old.")
+print("Your student ID is", z)
+print("Your favorite song is", a)

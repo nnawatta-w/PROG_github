@@ -1,0 +1,2 @@
+name = input("Enter your name: ")
+print(f"I am \"{name}\", I am obsessed in data-intensive systems and high-performance computing. \nCurrently, I am working as a database administrator for LINE MAN Wongnai. Meanwhile, I am also finalizing research on making graph query engines closer to hand-written high-performance code. \nMy other obsession is in teaching. I can spend several hours teaching without being tried out. \nI have an ambitious dream of creating a frontier database system group in Thailand.")
