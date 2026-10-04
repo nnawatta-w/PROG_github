@@ -425,3 +425,43 @@ footer {
     color: var(--muted);
     line-height: 1.7;
 }
+/* =========================
+   PROMPTS SECTION
+========================= */
+
+.prompts-content {
+    max-width: 900px;
+    padding-bottom: 110px;
+}
+
+.prompt-item {
+    padding: 35px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.prompt-item h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.prompt-text {
+    font-size: 1.1rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.change-title {
+    color: var(--accent);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.prompt-item p:last-child {
+    color: var(--muted);
+    line-height: 1.7;
+}
