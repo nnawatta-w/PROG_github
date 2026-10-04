@@ -1,45 +1,117 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="sunset">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Billkin: music and screen work</title>
-<meta name="description" content="A fan-made guide to Billkin's albums, singles, films and series.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<title>Billkin | Works</title>
+<meta name="description" content="Fan-made collection of Billkin's albums, songs and acting works.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Figtree:wght@400;500&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <img src="img/studio.jpg" alt="Billkin wearing headphones in a recording studio">
-  <div class="hero-text">
-    <h1>Billkin</h1>
-    <p>Singer and actor. This page collects his albums, singles, films and series.</p>
-    <nav><a href="#music">Music</a><a href="#screen">Film and series</a></nav>
+<header class="bar">
+  <a class="logo" href="#home">BILLKIN.</a>
+  <nav><a href="#about">About</a><a href="#albums">Albums</a><a href="#music">Songs</a><a href="#acting">Acting</a></nav>
+  <div class="themes" role="group" aria-label="Theme">
+    <button data-set="sunset">Sunset</button><button data-set="piano">Piano</button><button data-set="studio">Studio</button>
   </div>
 </header>
+<section id="home" class="hero">
+  <div>
+    <p class="tag">Actor · Singer · Artist</p>
+    <h1>Billkin <span>Putthipong</span></h1>
+    <p class="lead">A fan-made collection of Billkin Putthipong's music, albums, songs and acting works.</p>
+    <a class="btn" href="#albums">Explore his work ↓</a>
+  </div>
+  <img src="img/studio.jpg" alt="Billkin Putthipong in a recording studio">
+</section>
 <main>
-  <section id="music">
-    <h2>Music</h2>
-    <div class="records">
-<figure class="rec"><img src="img/feelquency.jpeg" alt="Feelquency cover art" loading="lazy"><figcaption><h3>Feelquency</h3><p>Album art: Billkin among a city built from piano keys and brass pipes.</p></figcaption></figure>
-<figure class="rec"><img src="img/feelquency-live.jpeg" alt="Feelquency Live Session cover art" loading="lazy"><figcaption><h3>Feelquency Live Session</h3><p>A live, stripped-back take on the Feelquency songs.</p></figcaption></figure>
-<figure class="rec"><img src="img/grow-with-the-flow.jpeg" alt="Grow with the Flow cover art" loading="lazy"><figcaption><h3>Grow with the Flow</h3><p>Single art: a run along a lake at sunset.</p></figcaption></figure>
-<figure class="rec"><img src="img/loves-apprentice.jpeg" alt="Love&#x27;s Apprentice cover art" loading="lazy"><figcaption><h3>Love&#x27;s Apprentice</h3><p>Single art: a quiet look through a car window, flowers in hand.</p></figcaption></figure>
-<figure class="rec"><img src="img/red-envelope-ost.jpeg" alt="The Red Envelope (OST) cover art" loading="lazy"><figcaption><h3>The Red Envelope (OST)</h3><p>Soundtrack single with PP Krit for the film The Red Envelope.</p></figcaption></figure>
-    </div>
-  </section>
-  <section id="screen">
-    <h2>Film and series</h2>
-<article class="work"><img src="img/grandma.png" alt="Still from How to Make Millions Before Grandma Dies" loading="lazy"><div><h3>How to Make Millions Before Grandma Dies</h3><p class='meta'>Film · 2024</p><p>A film about a grandson, his grandmother and the family around them.</p></div></article>
-<article class="work"><img src="img/i-told-sunset.jpeg" alt="Still from I Told Sunset About You" loading="lazy"><div><h3>I Told Sunset About You</h3><p class='meta'>Series · 2020</p><p>Billkin and PP Krit&#x27;s first on-screen pairing.</p></div></article>
-<article class="work"><img src="img/i-promised-you.jpeg" alt="Still from I Promised You the Moon" loading="lazy"><div><h3>I Promised You the Moon</h3><p class='meta'>Series</p><p>Billkin and PP Krit reunite on screen.</p></div></article>
-<article class="work"><img src="img/red-envelope.jpg" alt="Still from The Red Envelope" loading="lazy"><div><h3>The Red Envelope</h3><p class='meta'>Film</p><p>Billkin and PP Krit in a film with its own soundtrack single.</p></div></article>
-  </section>
+<section id="about" class="about">
+  <p class="num">01</p>
+  <div><p class="tag">About</p><h2>From screen stories to music.</h2></div>
+  <div class="copy"><p>Billkin is a Thai actor and recording artist known for his acting, pop music and soundtrack releases.</p>
+  <p>This website presents his albums, songs and selected acting works.</p></div>
+</section>
+<section id="albums"><p class="num">02</p><p class="tag">Discography</p><h2>Albums &amp; EPs</h2>
+<article class="album"><img src="img/loves-apprentice.jpeg" alt="LOVE&#x27;S APPRENTICE cover" loading="lazy"><div><p class="tag">2023 EP</p><h3>LOVE&#x27;S APPRENTICE</h3><details open><summary>Tracklist</summary><ol><li>ชอบตัวเองตอนอยู่กับเธอ (I Like Us)</li><li>การเดินทางที่สวยงาม (A Beautiful Ride)</li><li>Mr. Everything</li><li>กลับมาคบกันเถอะ (Please Please)</li><li>ยิ้มทั้งน้ำตา</li></ol></details></div></article>
+<article class="album"><img src="img/red-envelope-ost.jpeg" alt="ซองแดงแต่งผี (OST. The Red Envelope Album) cover" loading="lazy"><div><p class="tag">2025 OST EP</p><h3>ซองแดงแต่งผี (OST. The Red Envelope Album)</h3><details open><summary>Tracklist</summary><ol><li>สัมภเวซี้ (GFF Ghost Friend Forever)</li><li>ตื่น (Wake Up Call)</li><li>ใจหล่น (Ruined)</li><li>รักแรกพบ (Knock Knock)</li><li>See You Somewhere</li></ol></details></div></article>
+<article class="album"><img src="img/grow-with-the-flow.jpeg" alt="Grow With The Flow cover" loading="lazy"><div><p class="tag">2025 Album</p><h3>Grow With The Flow</h3><details open><summary>Tracklist</summary><ol><li>Daily Magic</li><li>ก้าวก่าย (Still On Your Line)</li><li>Golden Hour</li><li>ยิ่งดุยิ่งชอบ (Bossy Baby)</li><li>ตัวโดน (Always Me)</li><li>นับหนึ่ง (From now on)</li><li>ใครจะรู้ (Silent Blue)</li><li>Grow With The Flow</li></ol></details></div></article>
+<article class="album"><img src="img/feelquency.jpeg" alt="BILLKIN FEELQUENCY cover" loading="lazy"><div><p class="tag">2026 Album</p><h3>BILLKIN FEELQUENCY</h3><details open><summary>Tracklist</summary><ol><li>Mr. Everything</li><li>รักแรกพบ (Knock Knock)</li><li>ชอบตัวเองตอนอยู่กับเธอ (I Like Us)</li><li>นับหนึ่ง (From now on)</li><li>See You Somewhere</li><li>ยิ้มทั้งน้ำตา</li><li>Grow With The Flow</li><li>Daily Magic</li><li>ใครจะรู้ (Silent Blue)</li><li>แปลไม่ออก (Untold Answer)</li><li>ตัวโดน (Always Me)</li><li>ก้าวก่าย (Still On Your Line)</li><li>การเดินทางที่สวยงาม (A Beautiful Ride)</li><li>กอดในใจ</li><li>โคตรพิเศษ</li><li>ยิ่งดุยิ่งชอบ (Bossy Baby)</li><li>I ไม่ O (IXO)</li><li>กลับมาคบกันเถอะ (Please Please)</li><li>You Are My Everything</li><li>กีดกัน (Skyline)</li></ol></details></div></article>
+<article class="album"><img src="img/feelquency-live.jpeg" alt="BILLKIN FEELQUENCY LIVE SESSION cover" loading="lazy"><div><p class="tag">2026 Live Session</p><h3>BILLKIN FEELQUENCY LIVE SESSION</h3><details open><summary>Tracklist</summary><ol><li>Mr. Everything (FEELQUENCY LIVE SESSION)</li><li>ชอบตัวเองตอนอยู่กับเธอ (I Like Us) [FEELQUENCY LIVE SESSION]</li><li>ใครจะรู้ (Silent Blue) [FEELQUENCY LIVE SESSION]</li></ol></details></div></article>
+</section>
+<section id="music"><p class="num">03</p><p class="tag">Complete discography</p><h2>All Songs</h2>
+<ul class="songs">
+<li><span class="yr">2017</span><span class="st">ไม่กลัว (Mai Glua)</span><span class="sn">OST / Collaboration</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%81%E0%B8%A5%E0%B8%B1%E0%B8%A7%20%28Mai%20Glua%29" target="_blank" rel="noopener" aria-label="Search ไม่กลัว (Mai Glua) on Spotify">↗</a></li>
+<li><span class="yr">2019</span><span class="st">You Are My Everything</span><span class="sn">OST My Ambulance</span><a href="https://open.spotify.com/search/Billkin%20You%20Are%20My%20Everything" target="_blank" rel="noopener" aria-label="Search You Are My Everything on Spotify">↗</a></li>
+<li><span class="yr">2019</span><span class="st">I Love You ต่อจากนี้จะขอรัก...รักเธอต่อไป</span><span class="sn">OST My Ambulance</span><a href="https://open.spotify.com/search/Billkin%20I%20Love%20You%20%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B8%88%E0%B8%B0%E0%B8%82%E0%B8%AD%E0%B8%A3%E0%B8%B1%E0%B8%81...%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%98%E0%B8%AD%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B9%84%E0%B8%9B" target="_blank" rel="noopener" aria-label="Search I Love You ต่อจากนี้จะขอรัก...รักเธอต่อไป on Spotify">↗</a></li>
+<li><span class="yr">2020</span><span class="st">กอดในใจ (Hug in Mind)</span><span class="sn">with JAYLERR</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%81%E0%B8%AD%E0%B8%94%E0%B9%83%E0%B8%99%E0%B9%83%E0%B8%88%20%28Hug%20in%20Mind%29" target="_blank" rel="noopener" aria-label="Search กอดในใจ (Hug in Mind) on Spotify">↗</a></li>
+<li><span class="yr">2020</span><span class="st">กีดกัน (Skyline)</span><span class="sn">OST I Told Sunset About You</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%81%E0%B8%B5%E0%B8%94%E0%B8%81%E0%B8%B1%E0%B8%99%20%28Skyline%29" target="_blank" rel="noopener" aria-label="Search กีดกัน (Skyline) on Spotify">↗</a></li>
+<li><span class="yr">2020</span><span class="st">แปลไม่ออก (Untold Answer)</span><span class="sn">OST I Told Sunset About You</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%AD%E0%B8%AD%E0%B8%81%20%28Untold%20Answer%29" target="_blank" rel="noopener" aria-label="Search แปลไม่ออก (Untold Answer) on Spotify">↗</a></li>
+<li><span class="yr">2020</span><span class="st">โคตรพิเศษ</span><span class="sn">OST I Told Sunset About You</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%82%E0%B8%84%E0%B8%95%E0%B8%A3%E0%B8%9E%E0%B8%B4%E0%B9%80%E0%B8%A8%E0%B8%A9" target="_blank" rel="noopener" aria-label="Search โคตรพิเศษ on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">หลอกกันทั้งนั้น (Fake News)</span><span class="sn">OST I Promised You the Moon</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%AB%E0%B8%A5%E0%B8%AD%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%99%E0%B8%B1%E0%B9%89%E0%B8%99%20%28Fake%20News%29" target="_blank" rel="noopener" aria-label="Search หลอกกันทั้งนั้น (Fake News) on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">I ไม่ O (IXO)</span><span class="sn">Single</span><a href="https://open.spotify.com/search/Billkin%20I%20%E0%B9%84%E0%B8%A1%E0%B9%88%20O%20%28IXO%29" target="_blank" rel="noopener" aria-label="Search I ไม่ O (IXO) on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">เก็บไว้ตลอดไป (Once &amp; Forever)</span><span class="sn">Single</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%9A%E0%B9%84%E0%B8%A7%E0%B9%89%E0%B8%95%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B9%84%E0%B8%9B%20%28Once%20%26%20Forever%29" target="_blank" rel="noopener" aria-label="Search เก็บไว้ตลอดไป (Once &amp; Forever) on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">รู้งี้เป็นแฟนกันตั้งนานแล้ว (Safe Zone)</span><span class="sn">with PP KRIT</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%87%E0%B8%B5%E0%B9%89%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B9%81%E0%B8%9F%E0%B8%99%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%99%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B9%89%E0%B8%A7%20%28Safe%20Zone%29" target="_blank" rel="noopener" aria-label="Search รู้งี้เป็นแฟนกันตั้งนานแล้ว (Safe Zone) on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">ทะเลสีดำ (The Black Sea)</span><span class="sn">with PP KRIT</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%E0%B8%AA%E0%B8%B5%E0%B8%94%E0%B8%B3%20%28The%20Black%20Sea%29" target="_blank" rel="noopener" aria-label="Search ทะเลสีดำ (The Black Sea) on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">ไม่ปล่อยมือ (Coming of Age)</span><span class="sn">with PP KRIT</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%9B%E0%B8%A5%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%A1%E0%B8%B7%E0%B8%AD%20%28Coming%20of%20Age%29" target="_blank" rel="noopener" aria-label="Search ไม่ปล่อยมือ (Coming of Age) on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">คิดไม่ออก</span><span class="sn">with TangBadVoice</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%AD%E0%B8%AD%E0%B8%81" target="_blank" rel="noopener" aria-label="Search คิดไม่ออก on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">มันดีเลย</span><span class="sn">Collaboration</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B8%94%E0%B8%B5%E0%B9%80%E0%B8%A5%E0%B8%A2" target="_blank" rel="noopener" aria-label="Search มันดีเลย on Spotify">↗</a></li>
+<li><span class="yr">2021</span><span class="st">ลบไม่ได้ช่วยให้ลืม (LIVE SESSION)</span><span class="sn">with Ink Waruntorn</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%A5%E0%B8%9A%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A5%E0%B8%B7%E0%B8%A1%20%28LIVE%20SESSION%29" target="_blank" rel="noopener" aria-label="Search ลบไม่ได้ช่วยให้ลืม (LIVE SESSION) on Spotify">↗</a></li>
+<li><span class="yr">2022</span><span class="st">ชอบตัวเองตอนอยู่กับเธอ (I Like Us)</span><span class="sn">LOVE&#x27;S APPRENTICE</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%8A%E0%B8%AD%E0%B8%9A%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%98%E0%B8%AD%20%28I%20Like%20Us%29" target="_blank" rel="noopener" aria-label="Search ชอบตัวเองตอนอยู่กับเธอ (I Like Us) on Spotify">↗</a></li>
+<li><span class="yr">2022</span><span class="st">กลับมาคบกันเถอะ (Please Please)</span><span class="sn">LOVE&#x27;S APPRENTICE</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%81%E0%B8%A5%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B2%E0%B8%84%E0%B8%9A%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%96%E0%B8%AD%E0%B8%B0%20%28Please%20Please%29" target="_blank" rel="noopener" aria-label="Search กลับมาคบกันเถอะ (Please Please) on Spotify">↗</a></li>
+<li><span class="yr">2022</span><span class="st">Mr. Everything</span><span class="sn">LOVE&#x27;S APPRENTICE</span><a href="https://open.spotify.com/search/Billkin%20Mr.%20Everything" target="_blank" rel="noopener" aria-label="Search Mr. Everything on Spotify">↗</a></li>
+<li><span class="yr">2022</span><span class="st">Give Me Your Forever</span><span class="sn">with Zack Tabudlo</span><a href="https://open.spotify.com/search/Billkin%20Give%20Me%20Your%20Forever" target="_blank" rel="noopener" aria-label="Search Give Me Your Forever on Spotify">↗</a></li>
+<li><span class="yr">2022</span><span class="st">แลกเลยปะ (Hoo Whee Hoo)</span><span class="sn">with PP KRIT and 4EVE</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%81%E0%B8%A5%E0%B8%81%E0%B9%80%E0%B8%A5%E0%B8%A2%E0%B8%9B%E0%B8%B0%20%28Hoo%20Whee%20Hoo%29" target="_blank" rel="noopener" aria-label="Search แลกเลยปะ (Hoo Whee Hoo) on Spotify">↗</a></li>
+<li><span class="yr">2022</span><span class="st">Self Love</span><span class="sn">Collaboration</span><a href="https://open.spotify.com/search/Billkin%20Self%20Love" target="_blank" rel="noopener" aria-label="Search Self Love on Spotify">↗</a></li>
+<li><span class="yr">2023</span><span class="st">ยิ้มทั้งน้ำตา</span><span class="sn">LOVE&#x27;S APPRENTICE</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%A2%E0%B8%B4%E0%B9%89%E0%B8%A1%E0%B8%97%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2" target="_blank" rel="noopener" aria-label="Search ยิ้มทั้งน้ำตา on Spotify">↗</a></li>
+<li><span class="yr">2023</span><span class="st">การเดินทางที่สวยงาม (A Beautiful Ride)</span><span class="sn">LOVE&#x27;S APPRENTICE</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%A1%20%28A%20Beautiful%20Ride%29" target="_blank" rel="noopener" aria-label="Search การเดินทางที่สวยงาม (A Beautiful Ride) on Spotify">↗</a></li>
+<li><span class="yr">2023</span><span class="st">Daily Magic</span><span class="sn">Grow With The Flow</span><a href="https://open.spotify.com/search/Billkin%20Daily%20Magic" target="_blank" rel="noopener" aria-label="Search Daily Magic on Spotify">↗</a></li>
+<li><span class="yr">2023</span><span class="st">กันและกัน</span><span class="sn">with Zom Marie</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99" target="_blank" rel="noopener" aria-label="Search กันและกัน on Spotify">↗</a></li>
+<li><span class="yr">2024</span><span class="st">ก้าวก่าย (Still On Your Line)</span><span class="sn">Grow With The Flow</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%81%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%81%E0%B9%88%E0%B8%B2%E0%B8%A2%20%28Still%20On%20Your%20Line%29" target="_blank" rel="noopener" aria-label="Search ก้าวก่าย (Still On Your Line) on Spotify">↗</a></li>
+<li><span class="yr">2024</span><span class="st">สวยงามเสมอ (Ever-Forever)</span><span class="sn">OST How to Make Millions Before Grandma Dies</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%AA%E0%B8%A7%E0%B8%A2%E0%B8%87%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%AA%E0%B8%A1%E0%B8%AD%20%28Ever-Forever%29" target="_blank" rel="noopener" aria-label="Search สวยงามเสมอ (Ever-Forever) on Spotify">↗</a></li>
+<li><span class="yr">2024</span><span class="st">Golden Hour</span><span class="sn">Grow With The Flow</span><a href="https://open.spotify.com/search/Billkin%20Golden%20Hour" target="_blank" rel="noopener" aria-label="Search Golden Hour on Spotify">↗</a></li>
+<li><span class="yr">2024</span><span class="st">ยิ่งดุยิ่งชอบ (Bossy Baby)</span><span class="sn">Grow With The Flow</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%A2%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%94%E0%B8%B8%E0%B8%A2%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%AD%E0%B8%9A%20%28Bossy%20Baby%29" target="_blank" rel="noopener" aria-label="Search ยิ่งดุยิ่งชอบ (Bossy Baby) on Spotify">↗</a></li>
+<li><span class="yr">2024</span><span class="st">ยอม (Surrender)</span><span class="sn">with PP KRIT</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%A2%E0%B8%AD%E0%B8%A1%20%28Surrender%29" target="_blank" rel="noopener" aria-label="Search ยอม (Surrender) on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">ตัวโดน (Always Me)</span><span class="sn">Grow With The Flow</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%82%E0%B8%94%E0%B8%99%20%28Always%20Me%29" target="_blank" rel="noopener" aria-label="Search ตัวโดน (Always Me) on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">สัมภเวซี้ (GFF Ghost Friend Forever)</span><span class="sn">with PP KRIT</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%AA%E0%B8%B1%E0%B8%A1%E0%B8%A0%E0%B9%80%E0%B8%A7%E0%B8%8B%E0%B8%B5%E0%B9%89%20%28GFF%20Ghost%20Friend%20Forever%29" target="_blank" rel="noopener" aria-label="Search สัมภเวซี้ (GFF Ghost Friend Forever) on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">รักแรกพบ (Knock Knock)</span><span class="sn">OST The Red Envelope</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B9%81%E0%B8%A3%E0%B8%81%E0%B8%9E%E0%B8%9A%20%28Knock%20Knock%29" target="_blank" rel="noopener" aria-label="Search รักแรกพบ (Knock Knock) on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">See You Somewhere</span><span class="sn">OST The Red Envelope</span><a href="https://open.spotify.com/search/Billkin%20See%20You%20Somewhere" target="_blank" rel="noopener" aria-label="Search See You Somewhere on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">I&#x27;m OK // Not OK</span><span class="sn">with BOYdPOD</span><a href="https://open.spotify.com/search/Billkin%20I%27m%20OK%20//%20Not%20OK" target="_blank" rel="noopener" aria-label="Search I&#x27;m OK // Not OK on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">I&#x27;m OK // Not OK (Headphones Version)</span><span class="sn">with BOYdPOD</span><a href="https://open.spotify.com/search/Billkin%20I%27m%20OK%20//%20Not%20OK%20%28Headphones%20Version%29" target="_blank" rel="noopener" aria-label="Search I&#x27;m OK // Not OK (Headphones Version) on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">Oh It&#x27;s You</span><span class="sn">Collaboration</span><a href="https://open.spotify.com/search/Billkin%20Oh%20It%27s%20You" target="_blank" rel="noopener" aria-label="Search Oh It&#x27;s You on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">ขอโทษได้ไหม (If Only)</span><span class="sn">with NONT TANONT</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%82%E0%B8%AD%E0%B9%82%E0%B8%97%E0%B8%A9%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%84%E0%B8%AB%E0%B8%A1%20%28If%20Only%29" target="_blank" rel="noopener" aria-label="Search ขอโทษได้ไหม (If Only) on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">นับหนึ่ง (From now on)</span><span class="sn">Grow With The Flow</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%99%E0%B8%B1%E0%B8%9A%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%20%28From%20now%20on%29" target="_blank" rel="noopener" aria-label="Search นับหนึ่ง (From now on) on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">นับหนึ่ง (From now on) - Instrumental</span><span class="sn">Instrumental</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%99%E0%B8%B1%E0%B8%9A%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%20%28From%20now%20on%29%20-%20Instrumental" target="_blank" rel="noopener" aria-label="Search นับหนึ่ง (From now on) - Instrumental on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">ใครจะรู้ (Silent Blue)</span><span class="sn">Grow With The Flow</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%88%E0%B8%B0%E0%B8%A3%E0%B8%B9%E0%B9%89%20%28Silent%20Blue%29" target="_blank" rel="noopener" aria-label="Search ใครจะรู้ (Silent Blue) on Spotify">↗</a></li>
+<li><span class="yr">2025</span><span class="st">Grow With The Flow</span><span class="sn">Album title track</span><a href="https://open.spotify.com/search/Billkin%20Grow%20With%20The%20Flow" target="_blank" rel="noopener" aria-label="Search Grow With The Flow on Spotify">↗</a></li>
+<li><span class="yr">2026</span><span class="st">Mr. Everything (FEELQUENCY LIVE SESSION)</span><span class="sn">Live Session</span><a href="https://open.spotify.com/search/Billkin%20Mr.%20Everything%20%28FEELQUENCY%20LIVE%20SESSION%29" target="_blank" rel="noopener" aria-label="Search Mr. Everything (FEELQUENCY LIVE SESSION) on Spotify">↗</a></li>
+<li><span class="yr">2026</span><span class="st">ชอบตัวเองตอนอยู่กับเธอ (I Like Us) [FEELQUENCY LIVE SESSION]</span><span class="sn">Live Session</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%8A%E0%B8%AD%E0%B8%9A%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%98%E0%B8%AD%20%28I%20Like%20Us%29%20%5BFEELQUENCY%20LIVE%20SESSION%5D" target="_blank" rel="noopener" aria-label="Search ชอบตัวเองตอนอยู่กับเธอ (I Like Us) [FEELQUENCY LIVE SESSION] on Spotify">↗</a></li>
+<li><span class="yr">2026</span><span class="st">ใครจะรู้ (Silent Blue) [FEELQUENCY LIVE SESSION]</span><span class="sn">Live Session</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%88%E0%B8%B0%E0%B8%A3%E0%B8%B9%E0%B9%89%20%28Silent%20Blue%29%20%5BFEELQUENCY%20LIVE%20SESSION%5D" target="_blank" rel="noopener" aria-label="Search ใครจะรู้ (Silent Blue) [FEELQUENCY LIVE SESSION] on Spotify">↗</a></li>
+<li><span class="yr">2026</span><span class="st">ไม่มีวันไหนที่ไม่คิดถึง (starlost.) [Side by Side Session]</span><span class="sn">with PURPEECH</span><a href="https://open.spotify.com/search/Billkin%20%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%AB%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%96%E0%B8%B6%E0%B8%87%20%28starlost.%29%20%5BSide%20by%20Side%20Session%5D" target="_blank" rel="noopener" aria-label="Search ไม่มีวันไหนที่ไม่คิดถึง (starlost.) [Side by Side Session] on Spotify">↗</a></li>
+<li><span class="yr">2026</span><span class="st">See You Somewhere (LIVE SESSION)</span><span class="sn">with PURPEECH</span><a href="https://open.spotify.com/search/Billkin%20See%20You%20Somewhere%20%28LIVE%20SESSION%29" target="_blank" rel="noopener" aria-label="Search See You Somewhere (LIVE SESSION) on Spotify">↗</a></li>
+<li><span class="yr">2026</span><span class="st">ผลข้างเคียง (Love Effects)</span><span class="sn">with Ink Waruntorn</span><a href="https://open.spotify.com/search/Billkin%20%E0%B8%9C%E0%B8%A5%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%B5%E0%B8%A2%E0%B8%87%20%28Love%20Effects%29" target="_blank" rel="noopener" aria-label="Search ผลข้างเคียง (Love Effects) on Spotify">↗</a></li>
+<li><span class="yr">2026</span><span class="st">CHECKLIST</span><span class="sn">Single</span><a href="https://open.spotify.com/search/Billkin%20CHECKLIST" target="_blank" rel="noopener" aria-label="Search CHECKLIST on Spotify">↗</a></li>
+</ul></section>
+<section id="acting"><p class="num">04</p><p class="tag">Acting</p><h2>On Screen</h2>
+<div class="works">
+<article class="work"><img src="img/i-told-sunset.jpeg" alt="Still from I Told Sunset About You" loading="lazy"><p class="tag">2020 Series</p><h3>I Told Sunset About You</h3><p>Billkin played Teh in the coming-of-age series set in Phuket.</p></article>
+<article class="work"><img src="img/i-promised-you.jpeg" alt="Still from I Promised You the Moon" loading="lazy"><p class="tag">2021 Series</p><h3>I Promised You the Moon</h3><p>Billkin returned as Teh in the continuation of the story.</p></article>
+<article class="work"><img src="img/grandma.png" alt="Still from How to Make Millions Before Grandma Dies" loading="lazy"><p class="tag">2024 Film</p><h3>How to Make Millions Before Grandma Dies</h3><p>Billkin starred as M in the family drama film.</p></article>
+<article class="work"><img src="img/red-envelope.jpg" alt="Still from The Red Envelope" loading="lazy"><p class="tag">2025 Film</p><h3>The Red Envelope</h3><p>Billkin played Menn in the supernatural comedy-drama.</p></article>
+</div></section>
 </main>
 <footer>
-  <p>Fan-made site, not affiliated with Billkin or his management. Images belong to their respective owners.</p>
+  <h2>Where stories meet. Music lives.</h2>
+  <p>Fan-made site, not affiliated with Billkin or his management. Images belong to their owners.</p>
 </footer>
+<script>
+document.querySelectorAll("[data-set]").forEach(function(b){
+  b.addEventListener("click",function(){
+    document.documentElement.dataset.theme=b.dataset.set;
+    try{localStorage.setItem("theme",b.dataset.set)}catch(x){}
+  });
+});
+try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(x){}
+</script>
 </body>
 </html>
