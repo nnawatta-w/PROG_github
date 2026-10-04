@@ -11,7 +11,7 @@
 <body>
 <header class="bar">
   <a class="logo" href="#home">BILLKIN.</a>
-  <nav><a href="#about">About</a><a href="#albums">Albums</a><a href="#music">Songs</a><a href="#acting">Acting</a></nav>
+  <nav><a href="#about">About</a><a href="#albums">Albums</a><a href="#music">Songs</a><a href="#acting">Acting</a><a href="#ai">AI usage</a></nav>
   <div class="themes" role="group" aria-label="Theme">
     <button data-set="sunset">Sunset</button><button data-set="piano">Piano</button><button data-set="studio">Studio</button>
   </div>
@@ -99,6 +99,52 @@
 <article class="work"><img src="img/grandma.png" alt="Still from How to Make Millions Before Grandma Dies" loading="lazy"><p class="tag">2024 Film</p><h3>How to Make Millions Before Grandma Dies</h3><p>Billkin starred as M in the family drama film.</p></article>
 <article class="work"><img src="img/red-envelope.jpg" alt="Still from The Red Envelope" loading="lazy"><p class="tag">2025 Film</p><h3>The Red Envelope</h3><p>Billkin played Menn in the supernatural comedy-drama.</p></article>
 </div></section>
+<section id="ai">
+  <style>
+    #ai .cols{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(1.5rem,5vw,4rem);align-items:start}
+    #ai h3{margin-bottom:.5rem}
+    #ai p{color:var(--mute);margin-bottom:1rem;max-width:52ch}
+    #ai strong{color:var(--ink)}
+    #ai ul{margin:0 0 1rem;padding-left:1.2rem;color:var(--mute)}
+    #ai ol{margin:0;padding-left:1.5rem;columns:1}
+    #ai ol li{padding:.6rem 0;border-bottom:1px solid var(--line);font-weight:500}
+    #ai ol li span{display:block;color:var(--mute);font-size:.9rem;font-weight:400}
+    @media (max-width:800px){#ai .cols{grid-template-columns:1fr}}
+  </style>
+  <p class="num">05</p>
+  <p class="tag">Transparency</p>
+  <h2>AI usage</h2>
+  <div class="cols">
+    <div>
+      <h3>The tool</h3>
+      <p><strong>Claude Sonnet 5.5</strong>, a large language model made by Anthropic, used in the claude.ai chat. It wrote the Python site generator and stylesheet, built and previewed the site in its own sandbox, and explained the Git and GitHub Pages steps from my screenshots.</p>
+      <p>It could not open Cursor or my GitHub, so I ran the commands and pushed the files myself.</p>
+      <h3>What I did myself</h3>
+      <ul>
+        <li>Chose the topic and collected the images.</li>
+        <li>Chose the reference page and asked for a different theme.</li>
+        <li>Ran the build and Git commands in Cursor and pushed to GitHub.</li>
+        <li>Edited freeze.py so the old site no longer deletes the new folder.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Every prompt I used</h3>
+      <ol>
+        <li>Create me a website about Billkin's work by using python code in cursor and deploy it to my github. Use these pictures.<span>First version of the site, a zip file and deploy steps.</span></li>
+        <li>I have an repo already.<span>Steps for pushing to an existing repo.</span></li>
+        <li>I want to know what my web look like first.<span>A published preview page.</span></li>
+        <li>I want my web look like this (my reference page) but change a theme.<span>Rebuilt with the reference layout and three themes.</span></li>
+        <li>How to put it on my repo in GitHub, explain me step by step.<span>Step-by-step Git commands.</span></li>
+        <li>If I want to deploy 2 of them, how?<span>A plan using a separate repo for each site.</span></li>
+        <li>But I need it to be in my teacher repo, 2 of them.<span>Put the site in a /billkin subfolder; warning about freeze.py.</span></li>
+        <li>I think it in the billkin_website and I deployed it with A way.<span>One-line freeze.py change and copy commands.</span></li>
+        <li>Like this? (screenshot of freeze.py)<span>Confirmed the edit and gave the next commands.</span></li>
+        <li>Describe the AI tool + every prompt you used.<span>The text of this section.</span></li>
+        <li>I want it to be in my web. / Just tell me a code and where to put. / I want it to display on the Billkin page.<span>This code.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
 </main>
 <footer>
   <h2>Where stories meet. Music lives.</h2>
