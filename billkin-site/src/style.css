@@ -1,0 +1,48 @@
+:root{
+  --night:#0c1b1c; --deep:#132a2b; --brass:#d4a24c; --red:#e03a30; --paper:#efe6d2; --mute:#9fb1aa;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--paper);font:400 1.05rem/1.6 var(--body)}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+
+.hero{display:grid;grid-template-columns:minmax(260px,5fr) 7fr;min-height:92vh}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
+.hero-text{align-self:end;padding:clamp(1.5rem,5vw,4rem)}
+h1{font:800 clamp(4.5rem,15vw,12rem)/.85 var(--display);margin:0 0 1.5rem;letter-spacing:-.04em;color:var(--red)}
+.hero-text p{max-width:32ch;font-size:1.2rem;margin:0 0 1.5rem}
+nav{display:flex;gap:1.5rem}
+nav a{font-weight:500;color:var(--brass);text-underline-offset:.3em}
+
+main{padding:0 clamp(1.25rem,5vw,4rem)}
+section{padding:clamp(3rem,8vw,6rem) 0}
+h2{font:800 clamp(2rem,5vw,3.25rem)/1 var(--display);margin:0 0 2rem;letter-spacing:-.02em}
+h3{font:500 1.25rem/1.2 var(--display);margin:0 0 .35rem}
+p{margin:0}
+
+.records{display:flex;gap:1.25rem;overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory}
+.rec{flex:0 0 clamp(220px,28vw,320px);margin:0;scroll-snap-align:start}
+.rec img{width:100%;aspect-ratio:1;object-fit:cover;margin-bottom:.9rem}
+.rec p{color:var(--mute);font-size:.95rem}
+
+#screen{border-top:1px solid var(--deep)}
+.work{display:grid;grid-template-columns:7fr 5fr;gap:clamp(1.25rem,4vw,3rem);align-items:end;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.work:nth-of-type(even){grid-template-columns:5fr 7fr}
+.work:nth-of-type(even) img{order:2}
+.work img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.work h3{font-size:clamp(1.4rem,3vw,2rem)}
+.meta{color:var(--brass);font-weight:500;margin-bottom:.6rem}
+
+footer{padding:2rem clamp(1.25rem,5vw,4rem);border-top:1px solid var(--deep);color:var(--mute);font-size:.9rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero img{height:60vh}
+  .work,.work:nth-of-type(even){grid-template-columns:1fr}
+  .work:nth-of-type(even) img{order:0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
