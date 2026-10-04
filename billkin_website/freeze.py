@@ -9,7 +9,7 @@ docs_folder = project_folder.parent / "docs"
 
 app.config["FREEZER_DESTINATION"] = str(docs_folder)
 app.config["FREEZER_RELATIVE_URLS"] = True
-
+app.config["FREEZER_REMOVE_EXTRA_FILES"] = False
 freezer = Freezer(app)
 
 if __name__ == "__main__":
