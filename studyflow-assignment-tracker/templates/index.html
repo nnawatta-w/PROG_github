@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StudyFlow — a little structure for a calmer semester. Manage your assignments, deadlines, and progress.">
+  <meta name="theme-color" content="#5146cf">
+  <title>StudyFlow — Your study space</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+{% macro icon(name, extra='') -%}
+<svg class="icon {{ extra }}" aria-hidden="true"><use href="{{ url_for('static', filename='icons.svg') }}#{{ name }}"></use></svg>
+{%- endmacro %}
+<a class="skip-link" href="#main">Skip to main content</a>
+<aside class="sidebar" aria-label="Workspace sidebar">
+  <a class="brand" href="/" aria-label="StudyFlow home"><span class="brand-mark">{{ icon('layers') }}</span>StudyFlow<span class="brand-dot">.</span></a>
+  <div class="workspace-label">YOUR WORKSPACE</div>
+  <nav class="navigation" aria-label="Main navigation">
+    <button class="nav-item active" data-view="dashboard" aria-current="page">{{ icon('grid') }}<span>Overview</span></button>
+    <button class="nav-item" data-view="all">{{ icon('list') }}<span>All assignments</span><span class="nav-count" id="nav-total">0</span></button>
+    <button class="nav-item" data-view="upcoming">{{ icon('calendar') }}<span>Upcoming</span><span class="nav-count" id="nav-upcoming">0</span></button>
+    <button class="nav-item" data-view="completed">{{ icon('check-circle') }}<span>Completed</span></button>
+  </nav>
+  <div class="course-navigation">
+    <div class="workspace-label">YOUR COURSES</div>
+    <div id="sidebar-courses"><p class="sidebar-hint">Your courses will appear here.</p></div>
+  </div>
+  <div class="sidebar-bottom">
+    <div class="momentum-card">
+      <span class="eyebrow">A LITTLE EVERY DAY</span>
+      <h2>Progress is progress.</h2>
+      <p id="momentum-copy">Your next small step starts here.</p>
+      <progress id="completion-progress" max="100" value="0" aria-label="Assignments completed"></progress>
+      <div class="progress-caption"><span>Overall completion</span><strong id="completion-percent">0%</strong></div>
+    </div>
+    <div class="workspace-footer"><span class="avatar">S</span><div><strong>My study space</strong><span>Personal workspace</span></div><span class="online-dot" title="Stored on this device"></span></div>
+  </div>
+</aside>
+
+<div class="app-shell">
+  <header class="topbar">
+    <div class="breadcrumb">My workspace {{ icon('chevron-right') }} <strong id="breadcrumb-page">Overview</strong></div>
+    <div class="topbar-right"><span class="today-date" id="today-date"></span><span class="topbar-avatar" aria-hidden="true">S</span></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <div class="page-heading"><div><span class="eyebrow">A CLEAR MIND STARTS HERE</span><h1 id="page-title">Your semester, under control<span>.</span></h1><p>A little planning today. A little more breathing room tomorrow.</p></div><button class="button primary" id="add-assignment">{{ icon('plus') }}New assignment</button></div>
+
+    <section class="welcome-banner" aria-labelledby="welcome-title">
+      <div class="welcome-copy"><span class="banner-tag">{{ icon('sparkles') }} YOUR NEXT CHAPTER</span><h2 id="welcome-title">Big goals. Small steps.</h2><p>Keep your deadlines in sight and your head in the game.<br>You've got this — one assignment at a time.</p><button class="text-button" id="view-upcoming">See what's coming up {{ icon('arrow-right') }}</button></div>
+      <div class="focus-card"><div class="focus-label">{{ icon('calendar') }} NEXT ON YOUR LIST</div><strong id="focus-title">A fresh start awaits</strong><p id="focus-details">Add your first assignment and make a little room for focus.</p><span class="focus-badge" id="focus-badge">Let's get started</span></div>
+      <span class="banner-orbit orbit-one" aria-hidden="true"></span><span class="banner-orbit orbit-two" aria-hidden="true"></span>
+    </section>
+
+    <section class="stats-grid" aria-label="Assignment statistics">
+      <button class="stat-card" data-stat="all"><span class="stat-top"><span>Total assignments</span><span class="stat-icon indigo">{{ icon('layers') }}</span></span><strong id="stat-total">0</strong><span class="stat-description">Everything in one place</span></button>
+      <button class="stat-card" data-stat="pending"><span class="stat-top"><span>Pending</span><span class="stat-icon amber">{{ icon('clock') }}</span></span><strong id="stat-pending">0</strong><span class="stat-description">One step at a time</span></button>
+      <button class="stat-card" data-stat="completed"><span class="stat-top"><span>Completed</span><span class="stat-icon green">{{ icon('check-circle') }}</span></span><strong id="stat-completed">0</strong><span class="stat-description">Give yourself some credit</span></button>
+      <button class="stat-card" data-stat="overdue"><span class="stat-top"><span>Overdue</span><span class="stat-icon rose">{{ icon('alert') }}</span></span><strong id="stat-overdue">0</strong><span class="stat-description">A good place to refocus</span></button>
+    </section>
+
+    <div id="notice" class="notice" role="status" hidden></div>
+    <div id="page-error" class="error-banner" role="alert" hidden><span id="page-error-text"></span><button class="button small secondary" id="retry">Try again</button></div>
+
+    <section class="assignments-panel" id="assignments-section" aria-labelledby="assignments-heading" aria-busy="true">
+      <div class="panel-heading"><div><h2 id="assignments-heading">Your assignments <span class="count-pill" id="result-count">0</span></h2><p id="list-description">A clear view of what needs your attention.</p></div><span class="saved-label">{{ icon('check-circle') }} All changes saved automatically</span></div>
+      <div class="list-toolbar">
+        <label class="search-field">{{ icon('search') }}<span class="sr-only">Search assignments by title or course</span><input id="search" type="search" placeholder="Search assignments..." maxlength="160" autocomplete="off"><kbd aria-hidden="true">/</kbd></label>
+        <div class="sort-field">{{ icon('sort') }}<label for="sort" class="sr-only">Sort assignments</label><select id="sort"><option value="due_asc">Due date: earliest</option><option value="due_desc">Due date: latest</option><option value="priority">Priority: high to low</option><option value="newest">Recently added</option></select></div>
+      </div>
+      <div class="filter-bar"><div class="filter-label">{{ icon('filter') }}<span>Filter by</span></div>
+        <label class="sr-only" for="status-filter">Filter by status</label><select id="status-filter"><option value="all">All statuses</option><option value="pending">Pending</option><option value="completed">Completed</option><option value="overdue">Overdue</option><option value="today">Due today</option><option value="upcoming">Upcoming · 7 days</option></select>
+        <label class="sr-only" for="priority-filter">Filter by priority</label><select id="priority-filter"><option value="all">All priorities</option><option value="high">High priority</option><option value="medium">Medium priority</option><option value="low">Low priority</option></select>
+        <label class="sr-only" for="course-filter">Filter by course</label><select id="course-filter"><option value="">All courses</option></select>
+        <button id="reset-filters" class="text-button reset-button" hidden>Clear filters {{ icon('x') }}</button>
+      </div>
+      <div class="task-column-headings" aria-hidden="true"><span>ASSIGNMENT</span><span>COURSE</span><span>DUE DATE</span><span>PRIORITY</span><span>ACTIONS</span></div>
+      <div id="task-list" aria-label="Assignments"><div class="loading-state">Getting your study space ready…</div></div>
+      <div class="panel-footer"><span id="results-summary" role="status">Loading assignments…</span><span>{{ icon('shield') }} Your work, your space.</span></div>
+    </section>
+    <footer class="page-footer"><span>Less chaos. More clarity.</span><span>Made for the way you study. <span class="footer-sparkle">✦</span></span></footer>
+    <noscript><p class="error-banner">StudyFlow needs JavaScript enabled to display and manage assignments.</p></noscript>
+  </main>
+</div>
+
+<dialog id="assignment-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+  <form id="assignment-form" novalidate>
+    <div class="dialog-heading"><div><span class="eyebrow">MAKE SPACE FOR PROGRESS</span><h2 id="dialog-title">New assignment</h2></div><button class="icon-button" type="button" data-close="assignment-dialog" aria-label="Close assignment form">{{ icon('x') }}</button></div>
+    <p class="dialog-description" id="dialog-description">Capture the details. We'll keep the deadline in sight.</p>
+    <div id="form-error" class="form-error" role="alert" tabindex="-1" hidden></div>
+    <div class="form-field"><label for="title">Assignment title <span aria-hidden="true">*</span></label><input id="title" name="title" maxlength="160" placeholder="e.g. Research paper — first draft" required aria-describedby="title-error"><span class="field-error" id="title-error"></span></div>
+    <div class="form-field"><label for="course">Course <span aria-hidden="true">*</span></label><input id="course" name="course" maxlength="80" list="course-suggestions" placeholder="e.g. Introduction to Psychology" required aria-describedby="course-error"><datalist id="course-suggestions"></datalist><span class="field-error" id="course-error"></span></div>
+    <div class="form-row"><div class="form-field"><label for="due_date">Due date <span aria-hidden="true">*</span></label><input id="due_date" name="due_date" type="date" required aria-describedby="due_date-error"><span class="field-error" id="due_date-error"></span></div><div class="form-field"><label for="priority">Priority <span aria-hidden="true">*</span></label><select id="priority" name="priority" required aria-describedby="priority-error"><option value="medium">Medium priority</option><option value="high">High priority</option><option value="low">Low priority</option></select><span class="field-error" id="priority-error"></span></div></div>
+    <div class="form-field"><label for="notes">Notes <span class="optional">(optional)</span></label><textarea id="notes" name="notes" rows="3" maxlength="2000" placeholder="A useful link, a reminder, or a place to begin…" aria-describedby="notes-error"></textarea><span class="field-error" id="notes-error"></span></div>
+    <div class="dialog-footer"><span>Small steps count.</span><div><button class="button secondary" type="button" data-close="assignment-dialog">Cancel</button><button class="button primary" type="submit" id="save-assignment">Create assignment</button></div></div>
+  </form>
+</dialog>
+
+<dialog id="delete-dialog" class="delete-dialog" aria-labelledby="delete-heading" aria-describedby="delete-description"><div class="delete-icon">{{ icon('trash') }}</div><h2 id="delete-heading">Delete this assignment?</h2><p id="delete-description">This will permanently remove <strong id="delete-title"></strong>. This action cannot be undone.</p><p id="delete-error" class="form-error" role="alert" hidden></p><div class="delete-actions"><button class="button secondary" type="button" data-close="delete-dialog" autofocus>Keep assignment</button><button class="button danger" type="button" id="confirm-delete">Delete assignment</button></div></dialog>
+<div class="toast-region" id="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
