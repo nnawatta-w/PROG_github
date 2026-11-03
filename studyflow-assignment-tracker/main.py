@@ -1,7 +1,7 @@
 # StudyFlow - a local student assignment dashboard for The Spirit's Work.
 # Setup (macOS): python3 -m venv .venv
 # Then: source .venv/bin/activate && python3 -m pip install -r requirements.txt
-# Run: python3 main.py   |   Open: http://localhost:5000
+# Run: python3 main.py   |   Open: http://127.0.0.1:5000
 # Uses Flask, HTML/CSS/JavaScript, and built-in SQLite. No accounts needed.
 
 from datetime import date
@@ -374,7 +374,7 @@ def create_app(test_config=None):
 
 def main():
     """Start a local-only development server, with the debugger disabled."""
-    print("StudyFlow is starting at http://localhost:5000")
+    print("StudyFlow is starting at http://127.0.0.1:5000")
     create_app().run(host="127.0.0.1", port=5000, debug=False)
 
 

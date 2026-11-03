@@ -152,6 +152,40 @@ class AssignmentTrackerTests(unittest.TestCase):
         self.assertIn("Could not load", self.run_menu([]))
         self.assertEqual(self.data_file.read_bytes(), b"\xff\xfe")
 
+    def test_invalid_unicode_saved_fields_are_reported_and_preserved(self):
+        for field in ("course", "title", "due_date", "priority"):
+            with self.subTest(field=field):
+                record = self.assignment()
+                record[field] = "\ud800"
+                contents = json.dumps([record])
+                self.data_file.write_text(contents, encoding="utf-8")
+                output = self.run_cli(["2", "0"])
+                self.assertIn("Could not load", output)
+                self.assertEqual(self.data_file.read_text(encoding="utf-8"), contents)
+
+    def test_invalid_keyboard_bytes_are_rejected_before_saving(self):
+        shutil.copyfile(tracker.__file__, Path(self.folder.name) / "legacy_tracker.py")
+        result = subprocess.run(
+            [sys.executable, "-B", "-S", "legacy_tracker.py"],
+            input=b"1\nBad \xff course\nMath\nBad \xff title\nEssay\n2028-01-01\nHigh\n0\n",
+            capture_output=True, cwd=self.folder.name, timeout=10,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, b"")
+        self.assertEqual(result.stdout.count(b"Please enter valid Unicode text."), 2)
+        record = tracker.load_assignments()[0]
+        self.assertEqual((record["course"], record["title"]), ("Math", "Essay"))
+
+    def test_unicode_save_error_preserves_previous_data_and_cleans_temp(self):
+        previous = [self.assignment()]
+        self.assertTrue(tracker.save_assignments(previous))
+        invalid = self.assignment()
+        invalid["title"] = "\ud800"
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.assertFalse(tracker.save_assignments([invalid]))
+        self.assertEqual(tracker.load_assignments(), previous)
+        self.assertEqual(list(Path(self.folder.name).glob("*.tmp")), [])
+
     def test_failed_save_preserves_previous_file_and_cleans_temp(self):
         previous = [self.assignment()]
         self.assertTrue(tracker.save_assignments(previous))

@@ -1,3 +1,7 @@
+# Student Assignment Tracker: organize coursework, deadlines, and completion.
+# Run: python3 legacy_tracker.py (Python 3.8+; no extra packages needed).
+# Enter choices at the keyboard; changes are saved beside this file in assignments.json.
+
 import json
 import os
 from pathlib import Path
@@ -35,6 +39,7 @@ def load_assignments():
         for field in ("course", "title", "due_date", "priority"):
             if not isinstance(assignment[field], str) or not assignment[field].strip():
                 raise ValueError(f"Assignment {number} has an invalid {field}.")
+            assignment[field].encode("utf-8")
         parse_date(assignment["due_date"])
         if assignment["priority"] not in PRIORITIES.values():
             raise ValueError(f"Assignment {number} has an invalid priority.")
@@ -56,7 +61,7 @@ def save_assignments(assignments):
             file.write("\n")
         os.replace(temporary_path, DATA_FILE)
         return True
-    except OSError as error:
+    except (OSError, UnicodeError) as error:
         print(f"Could not save assignments: {error}")
         return False
     finally:
@@ -72,6 +77,11 @@ def read_text(prompt, current=None):
     while True:
         text = input(prompt).strip()
         if text:
+            try:
+                text.encode("utf-8")
+            except UnicodeEncodeError:
+                print("Please enter valid Unicode text.")
+                continue
             return text
         if current is not None:
             return current

@@ -6,6 +6,15 @@ StudyFlow is a Python Flask web application that helps students organize coursew
 
 Assignments can become difficult to manage when deadlines, course information, and reminders are scattered across different places. StudyFlow brings these details together so students can identify overdue work, plan upcoming tasks, and keep track of completed assignments.
 
+## Assignment requirements
+
+- **Run with Python:** after installing the dependencies below, run `python3 main.py` to start the dashboard. The command-line version runs with `python3 legacy_tracker.py` and needs no extra packages.
+- **Accept user input:** enter assignment details, search terms, and filters using the dashboard, or use the command-line menu.
+- **Handle invalid input:** required fields, dates, priorities, and value types are checked with helpful error messages. The command-line version also handles invalid menu choices, damaged saved files, and interrupted input.
+- **Opening comment block:** both entry-point files start with a short explanation of their purpose and how to run them.
+
+For the personal-idea requirement, explain in your submission why tracking assignments matters to you or people around you and how you chose this solution.
+
 ## Features
 
 - Create, edit, and delete assignments with a title, course, due date, priority, and optional notes.
@@ -78,7 +87,7 @@ The first run creates `studyflow.sqlite3` automatically beside `main.py`. A fres
 python3 -B -m unittest -v test_studyflow test_assignment_tracker
 ```
 
-The suite contains **41 tests**: 26 Flask backend tests and 15 tests for the preserved command-line tracker. Tests use isolated temporary databases and files rather than personal assignment data. They cover creation, updates, completion, deletion, persistence, filtering, sorting, date boundaries, input validation, legacy import, and database error handling. Backend tests use Flask's test client and do not open or control a browser.
+The suite contains **44 tests**: 26 Flask backend tests and 18 tests for the preserved command-line tracker. Tests use isolated temporary databases and files rather than personal assignment data. They cover creation, updates, completion, deletion, persistence, filtering, sorting, date boundaries, input validation (including malformed Unicode text), legacy import, and database error handling. Backend tests use Flask's test client and do not open or control a browser.
 
 ## Project structure
 
